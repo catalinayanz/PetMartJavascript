@@ -135,11 +135,11 @@ function confirmarCarrito() {
 function calcularTotal() {
   console.log("Carrito de compras:");
   carrito.forEach((item) => {
-    document.write(`- ${item.cantidad}  ${item.producto}:  ${item.subtotal}`);
+    document.write(`- ${item.cantidad}  ${item.producto}:  ${item.subtotal} <br>`);
   });
 
   let total = carrito.reduce((sum, item) => sum + item.subtotal, 0);
-  document.write(`Total a pagar: ${total}\n`);
+  document.write(`Total a pagar: ${total}`);
 }
 
 function vaciarCarrito() {
