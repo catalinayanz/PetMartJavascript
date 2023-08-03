@@ -12,36 +12,62 @@ for (let i = 0; i < productos.length; i++) {
 </div>`;
 productCards.innerHTML += cardHTML
 }
-//Establezco variables globales
-let productosEnCarrito = []
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function agregarAlCarrito(productoId) {
-  const productoSeleccionado = productos.find(producto => producto.id === productoId);
+let agregarButtons = document.getElementsByClassName("btn-primary");
 
-  if (productoSeleccionado) {
-    productosEnCarrito.push(productoSeleccionado);
+for (let i = 0; i < agregarButtons.length; i++) {
+    let button = agregarButtons[i]
+    button.addEventListener("click", agregarAlCarrito);
 
-    mostrarCarrito();
-  } else {
-    alert("El producto seleccionado no existe.");
-  }
 }
 
-function mostrarCarrito() {
+function agregarAlCarrito(event) {
+    let button = event.target;
+    let productoId = button.getAttribute("data-producto-id")
 
-  const cartItemsElement = document.getElementById("cart-items");
-  const cartTotalElement = document.getElementById("cart-total");
+    let producto = productos.find((producto) => producto.id == parseInt(productoId));
 
-  cartItemsElement.innerHTML = "";
+    let productoEnCarrito = carrito.find((item) => item.id == productoId);
+    // operador ternario if
+    productoEnCarrito ?  productoEnCarrito.cantidad += producto.cantidad : carrito.push({ ...producto });
 
-  productosEnCarrito.forEach(producto => {
-    const cartItemHTML = `<div>
-      <span>${producto.nombreProducto}</span>
-      <span>Precio: ${producto.precio}</span>
-    </div>`;
-    cartItemsElement.innerHTML += cartItemHTML;
-  });
-
-  const total = productosEnCarrito.reduce((acc, producto) => acc + producto.precio, 0);
-  cartTotalElement.textContent = total;
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 }
+
+const botonCarrito = document.getElementById("botonCarrito")
+const modalBody = document.getElementById("modal-body")
+
+function cargarProductosCarrito(array) {
+    modalBody.innerHTML = ""
+
+
+    array.forEach(productoCarrito => {
+        modalBody.innerHTML += `<div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 540px;">
+      <img class="card-img-top" height="300px" src="../${productoCarrito.imagen}" alt="${productoCarrito.nombreProducto}">
+      <div class="card-body">
+              <h4 class="card-title">${productoCarrito.nombreProducto}</h4>
+          
+              <p class="card-text"> seleccionaste ${productoCarrito.cantidad} unidad/es a $${productoCarrito.precio} cada una </p> 
+              <button class= "btn btn-danger" id="botonEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
+      </div>    
+  </div>
+`
+    });
+
+    array.forEach((productoCarrito, indice) => {
+        document.getElementById(`botonEliminar${productoCarrito.id}`).addEventListener("click", () => {
+            let cardProducto = document.getElementById(`productoCarrito${productoCarrito.id}`)
+            cardProducto.remove()
+            carrito.splice(indice, 1)
+            localStorage.setItem("carrito", JSON.stringify(carrito))
+
+
+        })
+
+    });
+
+}
+botonCarrito.addEventListener("click", () => {
+    cargarProductosCarrito(carrito)
+})

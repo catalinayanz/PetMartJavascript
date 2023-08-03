@@ -30,5 +30,5 @@ form.addEventListener("submit", function (e) {
     'Perfecto! Ya estás registrado!',
   )
   //Restablecer el formulario
-  formulario.reset();
+  form.reset();
 });
