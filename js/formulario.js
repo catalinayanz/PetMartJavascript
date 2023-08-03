@@ -26,7 +26,9 @@ form.addEventListener("submit", function (e) {
   console.log(registros);
 
   //Enviar los datos al servidor
-  alert("Has enviado los datos. Pronto te contactaremos")
+  Swal.fire(
+    'Perfecto! Ya estás registrado!',
+  )
   //Restablecer el formulario
   formulario.reset();
 });

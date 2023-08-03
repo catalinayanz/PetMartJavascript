@@ -14,6 +14,34 @@ productCards.innerHTML += cardHTML
 }
 //Establezco variables globales
 let carrito = [];
+
+// Retrieve cart data from local storage on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const cartData = localStorage.getItem("cart");
+  if (cartData) {
+    carrito = JSON.parse(cartData);
+  }
+  // Update the cart badge or any other related elements if needed.
+});
+
+// Modify agregarAlCarrito function to update the cart and local storage
+function agregarAlCarrito(producto) {
+  let productoEnCarrito = carrito.find((item) => item.id === producto.id);
+
+  if (productoEnCarrito) {
+    productoEnCarrito.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+
+  // Save updated cart data to local storage
+  localStorage.setItem("cart", JSON.stringify(carrito));
+
+  console.log("Producto agregado al carrito. ID: " + producto.id);
+  console.log("Carrito:", carrito);
+}
+
+/*
 let descuentoKeyword = "Patitas";
 let producto;
 // Agregar evento click a los botones "Agregar al carrito"
@@ -36,7 +64,7 @@ for (let i = 0; i < agregarButtons.length; i++) {
   // Actualizar la cantidad del producto en el objeto productos
   producto.cantidad = cantidad;
 }
-*/
+
 // Función para agregar productos al carrito
 function agregarAlCarrito(event) {
   let button = event.target;
