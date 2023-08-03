@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding-top: 0%;
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: montserrat;
+    src: url('../asset/ttf/Montserrat-Regular.ttf') format('truetype');
+  }
+  a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #060620;
+  }
+  header {
+    background-color: #ff76c5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+  }
+ .nav-link {
+    color: #060620;
+  }
+  .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  ul {
+    font-family: 'Montserrat', sans-serif;
+    list-style-type: none;
+  }
+  
+  p {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: #060620;
+  }
+  
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #060620;
+    size: 30px;
+    gap: 20px;
+    padding: 15px 25px;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #060620;
+    size: 20px;
+    margin: 16px;
+  }
+  
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #060620;
+  }
+  .formulario {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 7px 13px 37px #ff76c5;
+  }
+  .formulario h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #060620;
+  }
+  .inputs {
+    width: 100%;
+    background: #ff99d4;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #ff76c5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+  }
+  .formulario p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  .formulario a {
+    color: #060620;
+    text-decoration: none;
+  }
+  .formulario a:hover {
+    color: #ff76c5;
+    text-decoration: underline;
+  }
+  .button {
+    width: 100%;
+    background: #ff76c5;
+    padding: 12px;
+    color: #060620;
+    font-family: 'Montserrat', sans-serif;
+    margin: 16px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+  }
+  .button:hover {
+    color: #ffffff;
+    background-color: #ff99d4;
+  }
+.recibirPromociones {
+  display: none;
+}
+.checkbox {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.checkbox::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff76c5;
+  border-radius: 4px;
+}
+  .checkbox label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #060620;
+  }
+  .card {
+    background-color: #ffffff;
+    height: 100%;
+  }
+  .row {
+    gap: 10px;
+    padding: 30px 30px;
+  }
+ .card-img-top {
+        height: 200px;
+        object-fit: contain;
+    }
+    .card-tittle {
+        color: #060620;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .btn {
+        background-color: #ff76c5;
+        color: #060620;
+        font-family: 'Montserrat', sans-serif;
+        border: #ff76c5;
+    }
+    .btn:hover {
+     background-color: #ff76c5;
+    }
+
+    .footer {
+      background-color: #ff76c5;
+      margin-top: 50px;
+    }
+ .footer__container_redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 0;
+ }
+
+ .footer__container_redes h4 {
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  color: #060620;
+ }
+
+ .footer__container_redes a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff76c5;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+ }
+
+ .footer__container_redes a:hover {
+  background-color: #ff99d4;
+ }
+
+ .footer__container_pagos {
+  background-color: #ff99d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+ }
+
+ .footer__container_pagos img {
+  height: 40px;
+  object-fit: contain;
+ }
+
+ @media (min-width: 768px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer__container_redes {
+    justify-content: flex-start;
+  }
+
+  .footer__container_pagos {
+    justify-content: center;
+  }
+
+  .footer__container_pagos img {
+    width: 60px;
+  }
+}

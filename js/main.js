@@ -1,96 +1,68 @@
-//Establezco un array de objetos
-let productos = [
-    {
-        id: 1,
-        nombreProducto: "Kong",
-        tipoProducto: "juguete",
-        precio: 15000,
-    },
-    {
-        id: 2,
-        nombreProducto: "Sogas",
-        tipoProducto: "juguete",
-        precio: 2000,
-    },
-    {
-        id: 3,
-        nombreProducto: "Huesos",
-        tipoProducto: "juguete",
-        precio: 7000,
-    },
-    {
-        id: 4,
-        nombreProducto: "Frisbee",
-        tipoProducto: "juguete",
-        precio: 3000,
-    },
-    {
-        id: 5,
-        nombreProducto: "Pelotas",
-        tipoProducto: "juguete",
-        precio: 3000,
-    },
-    {
-        id: 6,
-        nombreProducto: "Impermeables",
-        tipoProducto: "abrigos",
-        precio: 6000,
-    },
-    {
-        id: 7,
-        nombreProducto: "Mantitas",
-        tipoProducto: "abrigos",
-        precio: 4000,
-    },
-    {
-        id: 8,
-        nombreProducto: "Buzos",
-        tipoProducto: "abrigos",
-        precio: 3000,
-    },
-    {
-        id: 9,
-        nombreProducto: "Manta tubo",
-        tipoProducto: "abrigos",
-        precio: 10000,
-    },
-    {
-        id: 10,
-        nombreProducto: "Frontline",
-        tipoProducto: "medicamentos",
-        precio: 4000,
-    },
-    {
-        id: 11,
-        nombreProducto: "Otidermico",
-        tipoProducto: "medicamentos",
-        precio: 1000,
-    },
-    {
-        id: 12,
-        nombreProducto: "Nexgard",
-        tipoProducto: "medicamentos",
-        precio: 3000,
-    },
-    {
-        id: 13,
-        nombreProducto: "Tachitos",
-        tipoProducto: "otros",
-        precio: 1000,
-    },
-    {
-        id: 14,
-        nombreProducto: "Cuchas",
-        tipoProducto: "otros",
-        precio: 6000,
-    },
-];
+//Hago las cards de productos
+let productCards = document.getElementById("products-cards")
+for (let i = 0; i < productos.length; i++) {
+  let producto = productos[i]
+  let cardHTML = `<div class="card" style="width: 18rem;">
+  <img src="${producto.imagen}" class="card-img-top" alt="imagen del producto">
+  <div class="card-body">
+    <h5 class="card-title">${producto.nombreProducto}</h5>
+    <p class="card-text">Precio: ${producto.precio}</p>
+    <a href="#" class="btn btn-primary">Agregar</a>
+  </div>
+</div>`;
+productCards.innerHTML += cardHTML
+}
 //Establezco variables globales
 let carrito = [];
 let descuentoKeyword = "Patitas";
 let producto;
+// Agregar evento click a los botones "Agregar al carrito"
+let agregarButtons = document.getElementsByClassName("btn btn-primary");
+
+for (let i = 0; i < agregarButtons.length; i++) {
+  let button = agregarButtons[i];
+  button.addEventListener("click", agregarAlCarrito);
+}
+
+// Función para actualizar la cantidad del producto en el objeto productos
+/*function actualizarCantidad(event) {
+  let input = event.target;
+  let productoId = input.getAttribute("data-producto-id");
+  let cantidad = parseInt(input.value);
+
+  // Buscar el producto por su ID en el array de productos
+  let producto = productos.find((producto) => producto.id === parseInt(productoId));
+
+  // Actualizar la cantidad del producto en el objeto productos
+  producto.cantidad = cantidad;
+}
+*/
+// Función para agregar productos al carrito
+function agregarAlCarrito(event) {
+  let button = event.target;
+  let productoId = button.getAttribute("data-producto-id");
+
+  // Buscar el producto por su ID en el array de productos
+  let producto = productos.find((producto) => producto.id === parseInt(productoId));
+
+  // Verificar si el producto ya está en el carrito
+  let productoEnCarrito = carrito.find((item) => item.id === producto.id);
+
+  if (productoEnCarrito) {
+    // Si el producto ya está en el carrito, incrementar la cantidad
+    productoEnCarrito.cantidad += producto.cantidad;
+  } else {
+    // Si el producto no está en el carrito, agregarlo con la cantidad actual
+    carrito.push({ ...producto });
+  }
+
+  console.log("Producto agregado al carrito. ID: " + productoId);
+  console.log("Carrito:", carrito);
+}
+
+
 //Implemento funciones de orden superior y métodos de búsqueda y transformación
-function descuentoPatitas(subtotal, keyword) {
+/*function descuentoPatitas(subtotal, keyword) {
   if (keyword.toLowerCase() === descuentoKeyword.toLowerCase()) {
     return subtotal * 0.9;
   }
@@ -157,3 +129,4 @@ if (carrito.length > 0) {
 
 calcularTotal();
 
+*/

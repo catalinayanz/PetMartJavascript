@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css"/>
-    <title>Tercera Prentrega Yanzon</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Registrate</title>
 </head>
 <body>
     <header>
         <nav class="nav">
-            <a class="nav-link active" aria-current="page" href="./index.html">Conmprar</a>
-            <a class="nav-link" href="./pages/registrate.html">Registrate</a>
+            <a class="nav-link active" aria-current="page" href="../index.html">Conmprar</a>
+            <a class="nav-link" href="./registrate.html">Registrate</a>
             <a class="nav-link" href="#">Nosotros</a>
           </nav>
     </header>
+
     <main>
-
-        <h1>PetMart</h1>
-        <h2>The purrrrfect place</h2>
-
-        <div id="products-cards" class="row"></div>
+        <form class="formulario">
+            <h2>Registrarme</h2>
+            <input class="inputs" type="text" name="nombres" id="nombre" placeholder="Nombre"/>
+            <input class="inputs" type="text" name="apellido" id="apellido" placeholder="Apellido"/>
+            <input class="inputs" type="email" name="email" id="email" placeholder="Ingresa tu email."/>
+            <input class="inputs" type="password" name="contraseña" id="contraseña" placeholder="Contraseña"/>
+            <div class="checkbox">
+                <label for="check">Quiero recibir las promociones a mi Email</label>
+                <input class="recibirPromociones" type="checkbox" id="check"/>
+                </div>
+                <input class="button" type="submit" value="Registrarme"/>
+            <p><a href="">Ya estoy registrado.</a></p>
+              </form>
     </main>
 
     <footer class="footer">
@@ -41,15 +50,15 @@
             </svg></a>
           </div>
           <div class="footer__container_pagos">
-            <img src="./asset/imagenes/visa-svgrepo-com (1).svg" alt="visa"/>
-            <img src="./asset/imagenes/mastercard-svgrepo-com.svg" alt="mastercard"/>
-            <img src="./asset/imagenes/cash-bill-svgrepo-com.svg" alt="cash"/>
+            <img src="../asset/imagenes/visa-svgrepo-com (1).svg" alt="visa"/>
+            <img src="../asset/imagenes/mastercard-svgrepo-com.svg" alt="mastercard"/>
+            <img src="../asset/imagenes/cash-bill-svgrepo-com.svg" alt="cash"/>
 
           </div>
   </footer>
   <script src="../js/formulario.js"></script>
   <script src="../js/checkbox_form.js"></script>
-<script src="./js/productos.js"></script>
-<script src="./js/main.js"></script>
+<script src="../js/productos.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
