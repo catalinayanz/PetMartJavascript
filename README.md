@@ -1,1 +1,1 @@
-# SegundaPrentrega de proyecto con JavaScript para Coder House
+# TerceraPrentrega de proyecto con JavaScript para Coder House
