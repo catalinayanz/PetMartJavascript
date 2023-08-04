@@ -7,7 +7,7 @@ for (let i = 0; i < productos.length; i++) {
   <div class="card-body">
     <h5 class="card-title">${producto.nombreProducto}</h5>
     <p class="card-text">Precio: ${producto.precio}</p>
-    <a href="#" class="btn btn-primary">Agregar</a>
+    <button data-producto-id="${producto.id}" class="btn btn-primary">Agregar</button>
   </div>
 </div>`;
 productCards.innerHTML += cardHTML
@@ -34,6 +34,7 @@ function agregarAlCarrito(event) {
 
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
+console.log(agregarAlCarrito)
 
 const botonCarrito = document.getElementById("botonCarrito")
 const modalBody = document.getElementById("modal-body")
@@ -68,6 +69,6 @@ function cargarProductosCarrito(array) {
     });
 
 }
-botonCarrito.addEventListener("click", () => {
+/*botonCarrito.addEventListener("click", () => {
     cargarProductosCarrito(carrito)
-})
+})*/
