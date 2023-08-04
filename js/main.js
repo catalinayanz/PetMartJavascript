@@ -35,6 +35,7 @@ function agregarAlCarrito(event) {
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 console.log(agregarAlCarrito)
+console.log(carrito);
 
 const botonCarrito = document.getElementById("botonCarrito")
 const modalBody = document.getElementById("modal-body")
