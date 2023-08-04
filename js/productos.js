@@ -6,14 +6,14 @@ let productos = [
         tipoProducto: "juguete",
         precio: 15000,
         imagen: "../asset/imagenes/Kong-extreme-negro.jpg",
-        cantidad: 0,
+        cantidad: 1,
     },
     {
         id: 2,
         nombreProducto: "Sogas",
         tipoProducto: "juguete",
         precio: 2000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/Soga.jpg"
     },
     {
@@ -21,7 +21,7 @@ let productos = [
         nombreProducto: "Huesos",
         tipoProducto: "juguete",
         precio: 700,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/Huesitos.jpg"
     },
     {
@@ -29,7 +29,7 @@ let productos = [
         nombreProducto: "Frisbee",
         tipoProducto: "juguete",
         precio: 3000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/frisbee.webp"
     },
     {
@@ -37,7 +37,7 @@ let productos = [
         nombreProducto: "Pelotas (Pack: 3)",
         tipoProducto: "juguete",
         precio: 1000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/pelotitaJackRussell.jpg"
     },
     {
@@ -45,7 +45,7 @@ let productos = [
         nombreProducto: "Impermeables",
         tipoProducto: "abrigos",
         precio: 6000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/ImpermeableBostonTerrier.webp"
     },
     {
@@ -53,7 +53,7 @@ let productos = [
         nombreProducto: "Mantitas",
         tipoProducto: "abrigos",
         precio: 4000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/Mantitasperrogato.jpg"
     },
     {
@@ -61,7 +61,7 @@ let productos = [
         nombreProducto: "Buzos",
         tipoProducto: "abrigos",
         precio: 3000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/BuzosBeagle.jpg"
     },
     {
@@ -69,7 +69,7 @@ let productos = [
         nombreProducto: "Manta tubo",
         tipoProducto: "abrigos",
         precio: 10000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/mantaTuboHorizontal.jpeg"
     },
     {
@@ -77,7 +77,7 @@ let productos = [
         nombreProducto: "Frontline",
         tipoProducto: "medicamentos",
         precio: 4000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/frontlineSpray.jpg"
     },
     {
@@ -85,7 +85,7 @@ let productos = [
         nombreProducto: "Otidermico",
         tipoProducto: "medicamentos",
         precio: 1000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/otidermico.jpg"
     },
     {
@@ -93,7 +93,7 @@ let productos = [
         nombreProducto: "Nexgard",
         tipoProducto: "medicamentos",
         precio: 3000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/nexGard.jpg"
     },
     {
@@ -101,7 +101,7 @@ let productos = [
         nombreProducto: "Tachitos",
         tipoProducto: "otros",
         precio: 2000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/tachitopatitas.jpg"
     },
     {
@@ -109,7 +109,7 @@ let productos = [
         nombreProducto: "Cuchas",
         tipoProducto: "otros",
         precio: 6000,
-        cantidad: 0,
+        cantidad: 1,
         imagen: "../asset/imagenes/cuchaPerrito.jpg"
     },
 ];
