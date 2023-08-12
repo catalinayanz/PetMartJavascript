@@ -212,6 +212,10 @@
   gap: 20px;
   padding: 10px 0;
  }
+ .perrito_sorpresa {
+  display: flex;
+  justify-content: center;
+ }
 
  .footer__container_pagos img {
   height: 40px;

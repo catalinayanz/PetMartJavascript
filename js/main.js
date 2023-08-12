@@ -2,12 +2,14 @@ let productCards = document.getElementById("products-cards");
 productCards.setAttribute("class", "contenedor_cards");
 //traemos el array de objetos con fetch y lo parseamos a JSON.
 const url = "../json/data.json";
+let productos = []
 
 fetch(url)
 .then((res) => res.json())
 .then((data) => {
     crearTarjetas(data);
-    agregarBotones();
+    //le paso a productos el array del fetch
+    productos = data
 });
 
 function crearTarjetas (data) {
@@ -23,6 +25,7 @@ function crearTarjetas (data) {
        </div>`;
   productCards.appendChild(card);
  })
+ agregarBotones();
 }
 
 function agregarBotones() {
@@ -30,7 +33,7 @@ function agregarBotones() {
 
     for (let i = 0; i < agregarButtons.length; i++) {
        let button = agregarButtons[i];
-       button.addEventListener("click", agregarAlCarrito());
+       button.addEventListener("click", agregarAlCarrito);
    
     };
  }
