@@ -118,28 +118,30 @@
     color: #ffffff;
     background-color: #ff99d4;
   }
-.recibirPromociones {
-  display: none;
-}
-.checkbox {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-}
-.checkbox::before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ff76c5;
-  border-radius: 4px;
-}
-  .checkbox label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: #060620;
+  main .texto-cabecera-index {
+    padding: 15px;
+    display: grid;
+    text-align: center;
+  }
+  main .hero {
+    padding: 60px 20px;
+  }
+  main .hero_container {
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+  }
+  main .nosotros_container p {
+    width: 900px;
+    margin-bottom: 40px;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  main .hero_container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
   }
   .card {
     background-color: #ffffff;
@@ -148,11 +150,14 @@
   .row {
     gap: 10px;
     padding: 30px 30px;
+    display: flex;
+    flex-wrap: wrap;
   }
- .card-img-top {
-        height: 200px;
-        object-fit: contain;
-    }
+  .contenedor_cards {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
     .card-tittle {
         color: #060620;
         font-family: 'Montserrat', sans-serif;

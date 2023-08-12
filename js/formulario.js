@@ -26,9 +26,10 @@ form.addEventListener("submit", function (e) {
   console.log(registros);
 
   //Enviar los datos al servidor
-  Swal.fire(
-    'Perfecto! Ya estás registrado!',
-  )
+  Swal.fire({
+    title: 'Perfecto! Ya estás registrado',
+    confirmButtonColor: "#ff99d4",
+  })
   //Restablecer el formulario
   form.reset();
 });

@@ -1,0 +1,16 @@
+[
+    { "id": 1, "nombreProducto": "Kong", "precio": 15000, "imagen": "../asset/imagenes/Kong-extreme-negro.jpg", "cantidad": 1},
+    { "id": 2, "nombreProducto": "Sogas", "precio": 2000, "imagen": "../asset/imagenes/Soga.jpg", "cantidad": 1},
+    { "id": 3, "nombreProducto": "Huesos", "precio": 700, "imagen": "../asset/imagenes/Huesitos.jpg", "cantidad": 1},
+    { "id": 4, "nombreProducto": "Frisbee", "precio": 3000, "imagen": "../asset/imagenes/frisbee.webp", "cantidad": 1},
+    { "id": 5, "nombreProducto": "Pelotas (Pack: 3)", "precio": 1000, "imagen": "../asset/imagenes/pelotitaJackRussell.jpg", "cantidad": 1},
+    { "id": 6, "nombreProducto": "Impermeables", "precio": 6000, "imagen": "../asset/imagenes/ImpermeableBostonTerrier.webp", "cantidad": 1},
+    { "id": 7, "nombreProducto": "Mantitas", "precio": 4000, "imagen": "../asset/imagenes/Mantitasperrogato.jpg", "cantidad": 1},
+    { "id": 8, "nombreProducto": "Buzos", "precio": 3000, "imagen": "../asset/imagenes/BuzosBeagle.jpg", "cantidad": 1},
+    { "id": 9, "nombreProducto": "Manta Tubo", "precio": 10000, "imagen": "../asset/imagenes/mantaTuboHorizontal.jpeg", "cantidad": 1},
+    { "id": 10, "nombreProducto": "FrontLine", "precio": 4000, "imagen": "../asset/imagenes/frontlineSpray.jpg", "cantidad": 1},
+    { "id": 11, "nombreProducto": "Otidermico", "precio": 1000, "imagen": "../asset/imagenes/otidermico.jpg", "cantidad": 1},
+    { "id": 12, "nombreProducto": "Nexgard", "precio": 3000, "imagen": "../asset/imagenes/nexGard.jpg", "cantidad": 1},
+    { "id": 13, "nombreProducto": "Tachitos", "precio": 2000, "imagen": "../asset/imagenes/tachitopatitas.jpg", "cantidad": 1},
+    { "id": 14, "nombreProducto": "Cuchas", "precio": 7000, "imagen": "../asset/imagenes/cuchaPerrito.jpg", "cantidad": 1}
+]

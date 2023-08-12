@@ -1,26 +1,41 @@
-//Hago las cards de productos
 let productCards = document.getElementById("products-cards");
-for (let i = 0; i < productos.length; i++) {
-  let producto = productos[i];
-  let cardHTML = `<div class="card" style="width: 18rem;">
-  <img src="${producto.imagen}" class="card-img-top" alt="imagen del producto">
-  <div class="card-body">
-    <h5 class="card-title">${producto.nombreProducto}</h5>
-    <p class="card-text">Precio: ${producto.precio}</p>
-    <button data-producto-id="${producto.id}" class="btn btn-primary">Agregar</button>
-  </div>
-</div>`;
-productCards.innerHTML += cardHTML;
+productCards.setAttribute("class", "contenedor_cards");
+//traemos el array de objetos con fetch y lo parseamos a JSON.
+const url = "../json/data.json";
+
+fetch(url)
+.then((res) => res.json())
+.then((data) => {
+    crearTarjetas(data);
+    agregarBotones();
+});
+
+function crearTarjetas (data) {
+    data.forEach((producto) => {
+        let card = document.createElement("div");
+        card.innerHTML = `<div class="card" style="width: 18rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="imagen del producto">
+        <div class="card-body">
+          <h5 class="card-title">${producto.nombreProducto}</h5>
+          <p class="card-text">Precio: ${producto.precio}</p>
+          <button data-producto-id="${producto.id}" class="btn btn-primary">Agregar</button>
+        </div>
+       </div>`;
+  productCards.appendChild(card);
+ })
 }
+
+function agregarBotones() {
+    let agregarButtons = document.getElementsByClassName("btn-primary");
+
+    for (let i = 0; i < agregarButtons.length; i++) {
+       let button = agregarButtons[i];
+       button.addEventListener("click", agregarAlCarrito());
+   
+    };
+ }
+
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-let agregarButtons = document.getElementsByClassName("btn-primary");
-
-for (let i = 0; i < agregarButtons.length; i++) {
-    let button = agregarButtons[i];
-    button.addEventListener("click", agregarAlCarrito);
-
-}
 
 function agregarAlCarrito(event) {
     let button = event.target;
@@ -33,7 +48,7 @@ function agregarAlCarrito(event) {
     productoEnCarrito ?  (productoEnCarrito.cantidad += producto.cantidad) : carrito.push({ ...producto });
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
-}
+};
 
 const botonCarrito = document.getElementById("botonCarrito");
 const modalBody = document.getElementById("modal-body");
@@ -51,7 +66,7 @@ function cargarProductosCarrito(array) {
               <button class= "btn btn-danger" id="botonEliminar${productoCarrito.id}">Eliminar</button>
       </div>    
   </div>
-`
+ `
     });
 
     array.forEach((productoCarrito, indice) => {
@@ -66,7 +81,8 @@ function cargarProductosCarrito(array) {
 
     });
 
-}
+};
+
 botonCarrito.addEventListener("click", () => {
     cargarProductosCarrito(carrito)
-})
+});
