@@ -34,7 +34,6 @@ function agregarBotones() {
     for (let i = 0; i < agregarButtons.length; i++) {
        let button = agregarButtons[i];
        button.addEventListener("click", agregarAlCarrito);
-   
     };
  }
 
@@ -49,6 +48,17 @@ function agregarAlCarrito(event) {
     let productoEnCarrito = carrito.find((item) => item.id == productoId);
     // operador ternario if
     productoEnCarrito ?  (productoEnCarrito.cantidad += producto.cantidad) : carrito.push({ ...producto });
+    Toastify({
+        text: "agregado al carrito!",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #ff76c5, #ff99d4)",
+        },
+        offset: {
+            x: 50,
+            y: 75
+          },
+      }).showToast();
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
