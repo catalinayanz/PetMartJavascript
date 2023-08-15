@@ -78,10 +78,7 @@ function cargarProductosCarrito(array) {
             cardProducto.remove()
             carrito.splice(indice, 1)
             localStorage.setItem("carrito", JSON.stringify(carrito))
-
-
         })
-
     });
 
 };
