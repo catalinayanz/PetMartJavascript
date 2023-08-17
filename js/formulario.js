@@ -22,14 +22,12 @@ form.addEventListener("submit", function (e) {
   let registros = [];
   registros.push(datosUsuario);
 
-  //Mostrar los datos registrados en la consola (solo para verificar)
-  console.log(registros);
-
-  //Enviar los datos al servidor
+  //Envio los datos al servidor
   Swal.fire({
     title: 'Perfecto! Ya estás registrado',
     confirmButtonColor: "#ff99d4",
-  })
+  });
+  
   //Restablecer el formulario
   form.reset();
 });
