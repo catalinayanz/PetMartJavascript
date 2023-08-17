@@ -1,1 +1,1 @@
-# TerceraPrentrega de proyecto con JavaScript para Coder House
+# PetMart. Proyecto con JavaScript para Coder House
